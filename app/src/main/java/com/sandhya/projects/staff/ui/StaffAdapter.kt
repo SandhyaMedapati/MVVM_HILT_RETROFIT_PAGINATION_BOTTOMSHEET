@@ -1,12 +1,9 @@
 package com.sandhya.projects.staff.ui
 
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.sandhya.projects.BottomSheetFragment
 import com.sandhya.projects.R
 import com.sandhya.projects.databinding.FragmentStaffListItemBinding
 import com.sandhya.projects.staff.data.StaffData
