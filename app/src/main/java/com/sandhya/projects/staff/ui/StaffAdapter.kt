@@ -46,7 +46,6 @@ class StaffAdapter @Inject constructor() : RecyclerView.Adapter<StaffAdapter.Sta
             binding.tvActorName.text = staffData.actor
             binding.tvDob.text = staffData.dateOfBirth
 
-            // Show the bottom sheet with more information
             itemView.setOnClickListener {
                 onItemClick?.invoke(staffData)
             }

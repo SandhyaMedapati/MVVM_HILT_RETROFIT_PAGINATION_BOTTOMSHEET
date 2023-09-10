@@ -39,6 +39,13 @@ class StudentsFragment: Fragment() {
         }
 
         viewModel.fetchAllStaff()
-    }
 
+        adapter.onItemClick = { studentData ->
+            val bottomSheetFragment = StudentsBottomSheetFragment()
+            val bundle = Bundle()
+            bundle.putParcelable("studentsData", studentData)
+            bottomSheetFragment.arguments = bundle
+            bottomSheetFragment.show(childFragmentManager, bottomSheetFragment.tag)
+        }
+    }
 }

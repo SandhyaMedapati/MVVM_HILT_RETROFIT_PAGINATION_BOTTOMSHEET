@@ -1,4 +1,4 @@
-package com.sandhya.projects
+package com.sandhya.projects.staff.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -25,11 +25,14 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
 
         val characterData: StaffData? = arguments?.getParcelable("staffData")
 
-        // Check if characterData is not null and display character information
         characterData?.let {
             binding.valueName.text = it.name
+            binding.valueGender.text = it.gender
             binding.valueSpecies.text = it.species
-            //binding.tvDateOfBirth.text = it.dateOfBirth
+            binding.valueHouse.text = it.house
+            binding.valueWizard.text = it.wizard.toString()
+            binding.valueEyeColor.text = it.eyeColour
+            binding.valueHairColor.text = it.hairColour
         }
     }
 }

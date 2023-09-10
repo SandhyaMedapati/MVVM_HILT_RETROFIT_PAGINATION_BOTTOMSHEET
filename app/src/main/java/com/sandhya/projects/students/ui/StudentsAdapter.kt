@@ -12,6 +12,7 @@ import javax.inject.Inject
 class StudentsAdapter @Inject constructor() : RecyclerView.Adapter<StudentsAdapter.StudentsViewHolder>() {
 
     var studentsList = mutableListOf<StudentsData>()
+    var onItemClick: ((StudentsData) -> Unit)? = null
 
     fun setStudents(students: List<StudentsData>) {
         this.studentsList = students.toMutableList()
@@ -44,6 +45,10 @@ class StudentsAdapter @Inject constructor() : RecyclerView.Adapter<StudentsAdapt
             binding.tvName.text = studentsData.name
             binding.tvActorName.text = studentsData.actor
             binding.tvDob.text = studentsData.dateOfBirth
+
+            itemView.setOnClickListener {
+                onItemClick?.invoke(studentsData)
+            }
         }
     }
 }
