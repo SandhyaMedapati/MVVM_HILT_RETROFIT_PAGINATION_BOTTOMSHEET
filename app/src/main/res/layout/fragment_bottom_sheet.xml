@@ -1,245 +1,255 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottomSheetCardView"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="10dp"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="8dp"
+    app:cardUseCompatPadding="true"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
     tools:context=".staff.ui.BottomSheetFragment">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/glStart"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="5dp" />
+        android:padding="10dp">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/glCenter"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glStart"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="5dp" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/glEnd"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintGuide_end="5dp" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glCenter"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
 
-    <TextView
-        android:id="@+id/valueName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
-        android:text="@string/harry_potter"
-        android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="5dp" />
 
-    <TextView
-        android:id="@+id/textGender"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/gender"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@id/glStart"
-        app:layout_constraintTop_toBottomOf="@+id/valueName" />
+        <TextView
+            android:id="@+id/valueName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="@string/harry_potter"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/valueGender"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:gravity="center"
-        android:text="@string/human"
-        app:layout_constraintStart_toEndOf="@+id/textGender"
-        app:layout_constraintTop_toTopOf="@+id/textGender" />
+        <TextView
+            android:id="@+id/textGender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/gender"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/glStart"
+            app:layout_constraintTop_toBottomOf="@+id/valueName" />
 
-    <TextView
-        android:id="@+id/textSpecies"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/species"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@id/glCenter"
-        app:layout_constraintTop_toBottomOf="@+id/valueName" />
+        <TextView
+            android:id="@+id/valueGender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:gravity="center"
+            android:text="@string/human"
+            app:layout_constraintStart_toEndOf="@+id/textGender"
+            app:layout_constraintTop_toTopOf="@+id/textGender" />
 
-    <TextView
-        android:id="@+id/valueSpecies"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:gravity="center"
-        android:text="@string/human"
-        app:layout_constraintStart_toEndOf="@+id/textSpecies"
-        app:layout_constraintTop_toTopOf="@+id/textSpecies" />
+        <TextView
+            android:id="@+id/textSpecies"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/species"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/glCenter"
+            app:layout_constraintTop_toBottomOf="@+id/valueName" />
 
-    <TextView
-        android:id="@+id/textHouse"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/house"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@id/glStart"
-        app:layout_constraintTop_toBottomOf="@+id/textSpecies" />
+        <TextView
+            android:id="@+id/valueSpecies"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:gravity="center"
+            android:text="@string/human"
+            app:layout_constraintStart_toEndOf="@+id/textSpecies"
+            app:layout_constraintTop_toTopOf="@+id/textSpecies" />
 
-    <TextView
-        android:id="@+id/valueHouse"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:gravity="center"
-        android:text="@string/human"
-        app:layout_constraintStart_toEndOf="@+id/textHouse"
-        app:layout_constraintTop_toTopOf="@+id/textHouse" />
+        <TextView
+            android:id="@+id/textHouse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/house"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/glStart"
+            app:layout_constraintTop_toBottomOf="@+id/textSpecies" />
 
-    <TextView
-        android:id="@+id/textWizard"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/wizard"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@id/glCenter"
-        app:layout_constraintTop_toBottomOf="@+id/textSpecies" />
+        <TextView
+            android:id="@+id/valueHouse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:gravity="center"
+            android:text="@string/human"
+            app:layout_constraintStart_toEndOf="@+id/textHouse"
+            app:layout_constraintTop_toTopOf="@+id/textHouse" />
 
-    <TextView
-        android:id="@+id/valueWizard"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:gravity="center"
-        android:text="@string/human"
-        app:layout_constraintStart_toEndOf="@+id/textWizard"
-        app:layout_constraintTop_toTopOf="@+id/textWizard" />
+        <TextView
+            android:id="@+id/textWizard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/wizard"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/glCenter"
+            app:layout_constraintTop_toBottomOf="@+id/textSpecies" />
 
-    <TextView
-        android:id="@+id/textEyeColor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/eye_colour"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@id/glStart"
-        app:layout_constraintTop_toBottomOf="@+id/textHouse" />
+        <TextView
+            android:id="@+id/valueWizard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:gravity="center"
+            android:text="@string/human"
+            app:layout_constraintStart_toEndOf="@+id/textWizard"
+            app:layout_constraintTop_toTopOf="@+id/textWizard" />
 
-    <TextView
-        android:id="@+id/valueEyeColor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:gravity="center"
-        android:text="@string/human"
-        app:layout_constraintStart_toEndOf="@+id/textEyeColor"
-        app:layout_constraintTop_toTopOf="@+id/textEyeColor" />
+        <TextView
+            android:id="@+id/textEyeColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/eye_colour"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/glStart"
+            app:layout_constraintTop_toBottomOf="@+id/textHouse" />
 
-    <TextView
-        android:id="@+id/textHairColor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/hair_color"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@id/glCenter"
-        app:layout_constraintTop_toBottomOf="@+id/textWizard" />
+        <TextView
+            android:id="@+id/valueEyeColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:gravity="center"
+            android:text="@string/human"
+            app:layout_constraintStart_toEndOf="@+id/textEyeColor"
+            app:layout_constraintTop_toTopOf="@+id/textEyeColor" />
 
-    <TextView
-        android:id="@+id/valueHairColor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:gravity="center"
-        android:text="@string/human"
-        app:layout_constraintStart_toEndOf="@+id/textHairColor"
-        app:layout_constraintTop_toTopOf="@+id/textHairColor" />
+        <TextView
+            android:id="@+id/textHairColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/hair_color"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/glCenter"
+            app:layout_constraintTop_toBottomOf="@+id/textWizard" />
 
-    <!--<TextView
-        android:id="@+id/textSpecies"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/species"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@id/glStart"
-        app:layout_constraintTop_toBottomOf="@+id/valueName" />
+        <TextView
+            android:id="@+id/valueHairColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:gravity="center"
+            android:text="@string/human"
+            app:layout_constraintStart_toEndOf="@+id/textHairColor"
+            app:layout_constraintTop_toTopOf="@+id/textHairColor" />
 
-    <TextView
-        android:id="@+id/valueSpecies"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:gravity="center"
-        android:text="@string/human"
-        app:layout_constraintStart_toEndOf="@+id/textSpecies"
-        app:layout_constraintTop_toTopOf="@+id/textSpecies" />
+        <!--<TextView
+            android:id="@+id/textSpecies"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/species"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/glStart"
+            app:layout_constraintTop_toBottomOf="@+id/valueName" />
 
-    <TextView
-        android:id="@+id/textSpecies"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/species"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@id/glStart"
-        app:layout_constraintTop_toBottomOf="@+id/valueName" />
+        <TextView
+            android:id="@+id/valueSpecies"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:gravity="center"
+            android:text="@string/human"
+            app:layout_constraintStart_toEndOf="@+id/textSpecies"
+            app:layout_constraintTop_toTopOf="@+id/textSpecies" />
 
-    <TextView
-        android:id="@+id/valueSpecies"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:gravity="center"
-        android:text="@string/human"
-        app:layout_constraintStart_toEndOf="@+id/textSpecies"
-        app:layout_constraintTop_toTopOf="@+id/textSpecies" />
+        <TextView
+            android:id="@+id/textSpecies"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/species"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/glStart"
+            app:layout_constraintTop_toBottomOf="@+id/valueName" />
 
-    <TextView
-        android:id="@+id/textSpecies"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/species"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@id/glStart"
-        app:layout_constraintTop_toBottomOf="@+id/valueName" />
+        <TextView
+            android:id="@+id/valueSpecies"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:gravity="center"
+            android:text="@string/human"
+            app:layout_constraintStart_toEndOf="@+id/textSpecies"
+            app:layout_constraintTop_toTopOf="@+id/textSpecies" />
 
-    <TextView
-        android:id="@+id/valueSpecies"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:gravity="center"
-        android:text="@string/human"
-        app:layout_constraintStart_toEndOf="@+id/textSpecies"
-        app:layout_constraintTop_toTopOf="@+id/textSpecies" />-->
+        <TextView
+            android:id="@+id/textSpecies"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/species"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/glStart"
+            app:layout_constraintTop_toBottomOf="@+id/valueName" />
+
+        <TextView
+            android:id="@+id/valueSpecies"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:gravity="center"
+            android:text="@string/human"
+            app:layout_constraintStart_toEndOf="@+id/textSpecies"
+            app:layout_constraintTop_toTopOf="@+id/textSpecies" />-->
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
