@@ -6,22 +6,23 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardCornerRadius="10dp"
-    app:cardElevation="8dp"
+    app:cardElevation="4dp"
     app:cardUseCompatPadding="true"
+    app:cardBackgroundColor="@color/white"
     app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
     tools:context=".students.ui.StudentsBottomSheetFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="10dp">
+        android:layout_height="478dp"
+        android:padding="5dp">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/glStart"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            app:layout_constraintGuide_begin="5dp" />
+            app:layout_constraintGuide_begin="1dp" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/glCenter"
@@ -35,7 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            app:layout_constraintGuide_end="5dp" />
+            app:layout_constraintGuide_end="1dp" />
 
         <TextView
             android:id="@+id/valueName"
@@ -46,7 +47,7 @@
             android:text="@string/harry_potter"
             android:textAllCaps="true"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -71,6 +72,7 @@
             android:layout_marginStart="20dp"
             android:gravity="center"
             android:text="@string/human"
+            android:textColor="@android:color/darker_gray"
             app:layout_constraintStart_toEndOf="@+id/textGender"
             app:layout_constraintTop_toTopOf="@+id/textGender" />
 
@@ -93,6 +95,7 @@
             android:layout_marginStart="20dp"
             android:gravity="center"
             android:text="@string/human"
+            android:textColor="@android:color/darker_gray"
             app:layout_constraintStart_toEndOf="@+id/textSpecies"
             app:layout_constraintTop_toTopOf="@+id/textSpecies" />
 
@@ -115,6 +118,7 @@
             android:layout_marginStart="20dp"
             android:gravity="center"
             android:text="@string/human"
+            android:textColor="@android:color/darker_gray"
             app:layout_constraintStart_toEndOf="@+id/textHouse"
             app:layout_constraintTop_toTopOf="@+id/textHouse" />
 
@@ -137,8 +141,55 @@
             android:layout_marginStart="20dp"
             android:gravity="center"
             android:text="@string/human"
+            android:textColor="@android:color/darker_gray"
             app:layout_constraintStart_toEndOf="@+id/textWizard"
             app:layout_constraintTop_toTopOf="@+id/textWizard" />
+
+        <TextView
+            android:id="@+id/textAncestry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/ancestry"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/glStart"
+            app:layout_constraintTop_toBottomOf="@+id/textHouse" />
+
+        <TextView
+            android:id="@+id/valueAncestry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:gravity="center"
+            android:text="@string/human"
+            android:textColor="@android:color/darker_gray"
+            app:layout_constraintStart_toEndOf="@+id/textAncestry"
+            app:layout_constraintTop_toTopOf="@+id/textAncestry" />
+
+        <TextView
+            android:id="@+id/textPatronus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/patronus"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/glCenter"
+            app:layout_constraintTop_toBottomOf="@+id/textWizard" />
+
+        <TextView
+            android:id="@+id/valuePatronus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:gravity="center"
+            android:text="@string/human"
+            android:textColor="@android:color/darker_gray"
+            app:layout_constraintStart_toEndOf="@+id/textPatronus"
+            app:layout_constraintTop_toTopOf="@+id/textPatronus" />
 
         <TextView
             android:id="@+id/textEyeColor"
@@ -150,7 +201,7 @@
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@id/glStart"
-            app:layout_constraintTop_toBottomOf="@+id/textHouse" />
+            app:layout_constraintTop_toBottomOf="@+id/textAncestry" />
 
         <TextView
             android:id="@+id/valueEyeColor"
@@ -159,6 +210,7 @@
             android:layout_marginStart="20dp"
             android:gravity="center"
             android:text="@string/human"
+            android:textColor="@android:color/darker_gray"
             app:layout_constraintStart_toEndOf="@+id/textEyeColor"
             app:layout_constraintTop_toTopOf="@+id/textEyeColor" />
 
@@ -172,7 +224,7 @@
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/glCenter"
-            app:layout_constraintTop_toBottomOf="@+id/textWizard" />
+            app:layout_constraintTop_toBottomOf="@+id/textPatronus" />
 
         <TextView
             android:id="@+id/valueHairColor"
@@ -181,74 +233,163 @@
             android:layout_marginStart="20dp"
             android:gravity="center"
             android:text="@string/human"
+            android:textColor="@android:color/darker_gray"
             app:layout_constraintStart_toEndOf="@+id/textHairColor"
             app:layout_constraintTop_toTopOf="@+id/textHairColor" />
 
-        <!--<TextView
-            android:id="@+id/textSpecies"
+        <TextView
+            android:id="@+id/textHogwartsStudent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="@string/species"
+            android:text="@string/hogwarts_student"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@id/glStart"
-            app:layout_constraintTop_toBottomOf="@+id/valueName" />
+            app:layout_constraintTop_toBottomOf="@+id/textEyeColor" />
 
         <TextView
-            android:id="@+id/valueSpecies"
+            android:id="@+id/valueHogwartsStudent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:gravity="center"
             android:text="@string/human"
-            app:layout_constraintStart_toEndOf="@+id/textSpecies"
-            app:layout_constraintTop_toTopOf="@+id/textSpecies" />
+            android:textColor="@android:color/darker_gray"
+            app:layout_constraintStart_toEndOf="@+id/textHogwartsStudent"
+            app:layout_constraintTop_toTopOf="@+id/textHogwartsStudent" />
 
         <TextView
-            android:id="@+id/textSpecies"
+            android:id="@+id/textHogwartsStaff"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="@string/species"
+            android:text="@string/hogwarts_staff"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@id/glStart"
-            app:layout_constraintTop_toBottomOf="@+id/valueName" />
+            app:layout_constraintStart_toStartOf="@id/glCenter"
+            app:layout_constraintTop_toBottomOf="@+id/textHairColor" />
 
         <TextView
-            android:id="@+id/valueSpecies"
+            android:id="@+id/valueHogwartsStaff"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:gravity="center"
             android:text="@string/human"
-            app:layout_constraintStart_toEndOf="@+id/textSpecies"
-            app:layout_constraintTop_toTopOf="@+id/textSpecies" />
+            android:textColor="@android:color/darker_gray"
+            app:layout_constraintStart_toEndOf="@+id/textHogwartsStaff"
+            app:layout_constraintTop_toTopOf="@+id/textHogwartsStaff" />
 
         <TextView
-            android:id="@+id/textSpecies"
+            android:id="@+id/textAlive"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="@string/species"
+            android:text="@string/alive"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@id/glStart"
-            app:layout_constraintTop_toBottomOf="@+id/valueName" />
+            app:layout_constraintTop_toBottomOf="@+id/textHogwartsStudent" />
 
         <TextView
-            android:id="@+id/valueSpecies"
+            android:id="@+id/valueAlive"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:gravity="center"
             android:text="@string/human"
-            app:layout_constraintStart_toEndOf="@+id/textSpecies"
-            app:layout_constraintTop_toTopOf="@+id/textSpecies" />-->
+            android:textColor="@android:color/darker_gray"
+            app:layout_constraintStart_toEndOf="@+id/textAlive"
+            app:layout_constraintTop_toTopOf="@+id/textAlive" />
+
+        <TextView
+            android:id="@+id/textWand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="@string/wand"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textAlive" />
+
+        <TextView
+            android:id="@+id/textWood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/wood"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/glStart"
+            app:layout_constraintTop_toBottomOf="@+id/textWand" />
+
+        <TextView
+            android:id="@+id/valueWood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:gravity="center"
+            android:text="@string/human"
+            android:textColor="@android:color/darker_gray"
+            app:layout_constraintStart_toEndOf="@+id/textWood"
+            app:layout_constraintTop_toTopOf="@+id/textWood" />
+
+        <TextView
+            android:id="@+id/textCore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/core"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/glCenter"
+            app:layout_constraintTop_toBottomOf="@+id/textWand" />
+
+        <TextView
+            android:id="@+id/valueCore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:gravity="center"
+            android:text="@string/human"
+            android:textColor="@android:color/darker_gray"
+            app:layout_constraintStart_toEndOf="@+id/textCore"
+            app:layout_constraintTop_toTopOf="@+id/textCore" />
+
+        <TextView
+            android:id="@+id/textLength"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="30dp"
+            android:text="@string/length"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/glStart"
+            app:layout_constraintTop_toBottomOf="@+id/textWood" />
+
+        <TextView
+            android:id="@+id/valueLength"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:gravity="center"
+            android:text="@string/human"
+            android:textColor="@android:color/darker_gray"
+            app:layout_constraintStart_toEndOf="@+id/textLength"
+            app:layout_constraintTop_toTopOf="@+id/textLength" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -31,8 +31,16 @@ class StudentsBottomSheetFragment : BottomSheetDialogFragment() {
             binding.valueSpecies.text = it.species
             binding.valueHouse.text = it.house
             binding.valueWizard.text = it.wizard.toString()
+            binding.valueAncestry.text = it.ancestry
+            binding.valuePatronus.text = it.patronus
             binding.valueEyeColor.text = it.eyeColour
             binding.valueHairColor.text = it.hairColour
+            binding.valueHogwartsStudent.text = it.hogwartsStudent.toString()
+            binding.valueHogwartsStaff.text = it.hogwartsStaff.toString()
+            binding.valueAlive.text = it.alive.toString()
+            binding.valueWood.text = it.wand.wood
+            binding.valueCore.text = it.wand.core
+            binding.valueLength.text = it.wand.length.toString()
         }
     }
 }

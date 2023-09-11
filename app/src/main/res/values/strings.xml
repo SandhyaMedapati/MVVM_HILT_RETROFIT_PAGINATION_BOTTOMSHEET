@@ -21,4 +21,13 @@
     <string name="eye_colour">Eye Colour :</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hogwarts_student">Hogwart\'s Student :</string>
+    <string name="hogwarts_staff">Hogwart\'s Staff :</string>
+    <string name="ancestry">Ancestry :</string>
+    <string name="alive">Alive :</string>
+    <string name="patronus">Patronus :</string>
+    <string name="wand">Wand</string>
+    <string name="wood">Wood :</string>
+    <string name="core">Core :</string>
+    <string name="length">Length :</string>
 </resources>
