@@ -9,7 +9,8 @@ import com.sandhya.projects.characters.data.CharactersData
 import com.sandhya.projects.databinding.FragmentStaffListItemBinding
 import javax.inject.Inject
 
-class CharactersAdapter @Inject constructor() : RecyclerView.Adapter<CharactersAdapter.CharactersViewHolder>() {
+class CharactersAdapter @Inject constructor() :
+    RecyclerView.Adapter<CharactersAdapter.CharactersViewHolder>() {
 
     var charactersList = mutableListOf<CharactersData>()
     var onItemClick: ((CharactersData) -> Unit)? = null
@@ -20,7 +21,8 @@ class CharactersAdapter @Inject constructor() : RecyclerView.Adapter<CharactersA
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharactersViewHolder {
-        val binding = FragmentStaffListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding =
+            FragmentStaffListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return CharactersViewHolder(binding)
     }
 
@@ -33,7 +35,8 @@ class CharactersAdapter @Inject constructor() : RecyclerView.Adapter<CharactersA
         return charactersList.size
     }
 
-    inner class CharactersViewHolder(private val binding: FragmentStaffListItemBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class CharactersViewHolder(private val binding: FragmentStaffListItemBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(charactersData: CharactersData) {
 
             Glide.with(itemView)

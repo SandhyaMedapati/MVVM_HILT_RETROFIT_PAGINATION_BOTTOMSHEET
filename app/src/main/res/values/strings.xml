@@ -19,8 +19,6 @@
     <string name="wizard">Wizard :</string>
     <string name="hair_color">Hair Colour :</string>
     <string name="eye_colour">Eye Colour :</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hogwarts_student">Hogwart\'s Student :</string>
     <string name="hogwarts_staff">Hogwart\'s Staff :</string>
     <string name="ancestry">Ancestry :</string>

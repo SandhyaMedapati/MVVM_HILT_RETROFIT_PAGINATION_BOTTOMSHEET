@@ -4,14 +4,10 @@ import android.os.Parcel
 import android.os.Parcelable
 
 data class Wand(
-    val wood: String,
-    val core: String,
-    val length: Float
+    val wood: String, val core: String, val length: Float
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
-        parcel.readString() ?: "",
-        parcel.readString() ?: "",
-        parcel.readFloat()
+        parcel.readString() ?: "", parcel.readString() ?: "", parcel.readFloat()
     )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {

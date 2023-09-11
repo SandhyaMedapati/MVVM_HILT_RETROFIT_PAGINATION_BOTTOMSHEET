@@ -18,8 +18,7 @@ object NetworkModule {
     @Singleton
     @Provides
     fun provideOkHttp(): OkHttpClient {
-        return OkHttpClient.Builder()
-            .build()
+        return OkHttpClient.Builder().build()
     }
 
     @Singleton
@@ -38,10 +37,7 @@ object NetworkModule {
 
     @Provides
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
-        return Retrofit.Builder()
-            .baseUrl("https://hp-api.onrender.com/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .client(okHttpClient)
-            .build()
+        return Retrofit.Builder().baseUrl("https://hp-api.onrender.com/")
+            .addConverterFactory(GsonConverterFactory.create()).client(okHttpClient).build()
     }
 }

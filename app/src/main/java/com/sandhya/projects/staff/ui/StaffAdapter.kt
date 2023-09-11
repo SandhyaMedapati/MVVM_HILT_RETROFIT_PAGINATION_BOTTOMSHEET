@@ -20,7 +20,8 @@ class StaffAdapter @Inject constructor() : RecyclerView.Adapter<StaffAdapter.Sta
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StaffViewHolder {
-        val binding = FragmentStaffListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding =
+            FragmentStaffListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return StaffViewHolder(binding)
     }
 
@@ -33,14 +34,12 @@ class StaffAdapter @Inject constructor() : RecyclerView.Adapter<StaffAdapter.Sta
         return staffList.size
     }
 
-    inner class StaffViewHolder(private val binding: FragmentStaffListItemBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class StaffViewHolder(private val binding: FragmentStaffListItemBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(staffData: StaffData) {
 
-            Glide.with(itemView)
-                .load(staffData.image)
-                .placeholder(R.drawable.default_image)
-                .fitCenter()
-                .into(binding.imageView)
+            Glide.with(itemView).load(staffData.image).placeholder(R.drawable.default_image)
+                .fitCenter().into(binding.imageView)
 
             binding.tvName.text = staffData.name
             binding.tvActorName.text = staffData.actor

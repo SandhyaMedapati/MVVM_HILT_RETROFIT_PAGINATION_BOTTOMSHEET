@@ -13,8 +13,7 @@ class CharactersBottomSheetFragment : BottomSheetDialogFragment() {
     private lateinit var binding: FragmentCharactersBottomSheetBinding
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         binding = FragmentCharactersBottomSheetBinding.inflate(inflater, container, false)
         return binding.root

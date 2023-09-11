@@ -11,7 +11,8 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class CharactersViewModel @Inject constructor(private val charactersRepository: CharactersRepository) : ViewModel() {
+class CharactersViewModel @Inject constructor(private val charactersRepository: CharactersRepository) :
+    ViewModel() {
 
     val charactersList = MutableLiveData<List<CharactersData>>()
 

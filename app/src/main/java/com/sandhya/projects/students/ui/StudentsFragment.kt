@@ -12,18 +12,17 @@ import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class StudentsFragment: Fragment() {
+class StudentsFragment : Fragment() {
 
     private val viewModel: StudentsViewModel by viewModels()
 
     private lateinit var binding: FragmentStudentsBinding
+
     @Inject
     lateinit var adapter: StudentsAdapter
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         binding = FragmentStudentsBinding.inflate(inflater, container, false)
         return binding.root

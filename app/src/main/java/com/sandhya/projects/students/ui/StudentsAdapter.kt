@@ -9,7 +9,8 @@ import com.sandhya.projects.databinding.FragmentStaffListItemBinding
 import com.sandhya.projects.students.data.StudentsData
 import javax.inject.Inject
 
-class StudentsAdapter @Inject constructor() : RecyclerView.Adapter<StudentsAdapter.StudentsViewHolder>() {
+class StudentsAdapter @Inject constructor() :
+    RecyclerView.Adapter<StudentsAdapter.StudentsViewHolder>() {
 
     var studentsList = mutableListOf<StudentsData>()
     var onItemClick: ((StudentsData) -> Unit)? = null
@@ -20,7 +21,8 @@ class StudentsAdapter @Inject constructor() : RecyclerView.Adapter<StudentsAdapt
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StudentsViewHolder {
-        val binding = FragmentStaffListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding =
+            FragmentStaffListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return StudentsViewHolder(binding)
     }
 
@@ -33,14 +35,12 @@ class StudentsAdapter @Inject constructor() : RecyclerView.Adapter<StudentsAdapt
         return studentsList.size
     }
 
-    inner class StudentsViewHolder(private val binding: FragmentStaffListItemBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class StudentsViewHolder(private val binding: FragmentStaffListItemBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(studentsData: StudentsData) {
 
-            Glide.with(itemView)
-                .load(studentsData.image)
-                .placeholder(R.drawable.default_image)
-                .fitCenter()
-                .into(binding.imageView)
+            Glide.with(itemView).load(studentsData.image).placeholder(R.drawable.default_image)
+                .fitCenter().into(binding.imageView)
 
             binding.tvName.text = studentsData.name
             binding.tvActorName.text = studentsData.actor
