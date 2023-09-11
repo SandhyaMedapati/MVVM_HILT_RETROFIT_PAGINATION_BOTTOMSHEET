@@ -19,4 +19,6 @@
     <string name="wizard">Wizard :</string>
     <string name="hair_color">Hair Colour :</string>
     <string name="eye_colour">Eye Colour :</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

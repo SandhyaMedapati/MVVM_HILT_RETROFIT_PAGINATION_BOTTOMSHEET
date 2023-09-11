@@ -39,6 +39,13 @@ class CharactersFragment: Fragment() {
         }
 
         viewModel.fetchAllCharacters()
-    }
 
+        adapter.onItemClick = { charactersData ->
+            val bottomSheetFragment = CharactersBottomSheetFragment()
+            val bundle = Bundle()
+            bundle.putParcelable("charactersData", charactersData)
+            bottomSheetFragment.arguments = bundle
+            bottomSheetFragment.show(childFragmentManager, bottomSheetFragment.tag)
+        }
+    }
 }
