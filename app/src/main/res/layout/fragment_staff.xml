@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,9 +8,10 @@
     tools:context=".staff.ui.StaffFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/staffRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@+id/staffProgressBar"
         android:layout_marginTop="5dp"
         android:background="?android:attr/selectableItemBackground"
         android:clipToPadding="false"
@@ -21,4 +22,13 @@
         android:scrollbars="vertical"
         tools:listitem="@layout/fragment_staff_list_item" />
 
-</LinearLayout>
+    <ProgressBar
+        android:id="@+id/staffProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:indeterminateTint="@color/white"
+        android:visibility="visible" />
+
+</RelativeLayout>

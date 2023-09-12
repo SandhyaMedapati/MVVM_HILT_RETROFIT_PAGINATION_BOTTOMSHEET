@@ -15,17 +15,49 @@ class CharactersViewModel @Inject constructor(private val charactersRepository: 
     ViewModel() {
 
     val charactersList = MutableLiveData<List<CharactersData>>()
+    var isLoading = MutableLiveData<Boolean>().apply { value = false }
+    val pageSize = 20
+    private var currentChunkIndex = 0
 
-    fun fetchAllCharacters() {
+    fun fetchInitialCharacters() {
         viewModelScope.launch {
             kotlin.runCatching {
                 charactersRepository.getCharactersData()
-            }.onSuccess {
-                charactersList.postValue(it.body())
+            }.onSuccess { response ->
+                val initialData = response.body()?.take(pageSize) ?: emptyList()
+                charactersList.postValue(initialData)
             }.onFailure {
                 // Handle the failure here
-                Log.e("CharactersViewModel", it.message.toString())
+                Log.e("StaffViewModel", it.message.toString())
             }
+        }
+    }
+
+    fun fetchRemainingCharacters() {
+        isLoading.value = true
+        viewModelScope.launch {
+            kotlin.runCatching {
+                charactersRepository.getCharactersData()
+            }.onSuccess { response ->
+                val allData = response.body() ?: emptyList()
+                val initialData = charactersList.value.orEmpty()
+                val remainingData = allData.drop(initialData.size)
+
+                val chunkedData = remainingData.chunked(pageSize)
+
+                if (currentChunkIndex < chunkedData.size) {
+                    val updatedList = (charactersList.value ?: emptyList()).toMutableList()
+                    updatedList.addAll(chunkedData[currentChunkIndex])
+                    charactersList.postValue(updatedList)
+
+                    // Increment the index for the next chunk
+                    currentChunkIndex++
+                }
+            }.onFailure {
+                charactersList.postValue(emptyList())
+                Log.e("StudentsViewModel", it.message.toString())
+            }
+            isLoading.value = false
         }
     }
 }

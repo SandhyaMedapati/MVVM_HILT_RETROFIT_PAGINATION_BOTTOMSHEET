@@ -1,6 +1,10 @@
 package com.sandhya.projects
 
+import android.graphics.Typeface
 import android.os.Bundle
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.style.StyleSpan
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.viewpager2.widget.ViewPager2
@@ -27,9 +31,9 @@ class MainActivity : AppCompatActivity() {
 
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             tab.text = when (position) {
-                0 -> "Staff"
-                1 -> "Student"
-                2 -> "Characters"
+                0 -> getStyledText("Staff")
+                1 -> getStyledText("Student")
+                2 -> getStyledText("Characters")
                 else -> null
             }
         }.attach()
@@ -49,5 +53,18 @@ class MainActivity : AppCompatActivity() {
                 // Empty
             }
         })
+    }
+
+    private fun getStyledText(text: String): SpannableString {
+        val spannableString = SpannableString(text)
+        spannableString.setSpan(
+            StyleSpan(Typeface.BOLD), 0, spannableString.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+        return spannableString
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        finish()
     }
 }
